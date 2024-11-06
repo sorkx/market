@@ -1,0 +1,30 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 16px;
+	font-weight: normal;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	min-width: 375px;
+	min-height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+ul, li {
+	list-style-type: none;
+  }
+  
+  a {
+	text-decoration: none;
+  }

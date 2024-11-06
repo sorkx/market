@@ -1,0 +1,55 @@
+.v-swiper {
+	box-sizing: content-box;
+    display: flex;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.swiper-container {
+	position: relative;
+}
+
+.swiper-pagination {
+	position: relative;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	gap: 10px;
+}
+
+.swiper-controls {
+    position: absolute;
+    top: -100px;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    gap: 20px;
+}
+
+.divider {
+	width: auto;
+    height: auto;
+	color: var(--color-subtext);
+}
+
+.total {
+	color: var(--color-subtext);
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 36px;
+}
+
+.current {
+	color: #212121;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 36px;
+}
+
+.left {
+	:deep(svg) {
+		transform: rotate(180deg);
+	}
+}

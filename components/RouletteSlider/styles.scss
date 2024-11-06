@@ -1,0 +1,24 @@
+.roulette-slider {
+	position: relative;
+}
+
+.roulette-slider .swiper {
+    height: 100%;
+    position: relative;
+}
+
+.roulette-slider .swiper-wrapper {
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 64px 0 56px;
+}
+
+.swiper-slide {
+	display: flex;
+    flex-shrink: 0;
+    height: -moz-fit-content;
+    height: fit-content;
+    max-height: 100%;
+    transform: none !important;
+    width: auto;
+}

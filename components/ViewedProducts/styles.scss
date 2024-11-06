@@ -1,0 +1,14 @@
+.viewed-products {
+	margin-top: 100px;
+
+	&__title {
+		margin-bottom: 60px;
+
+		h2 {
+			font-size: 30px;
+			font-weight: 600;
+			line-height: 36.16px;
+			color: var(--color-texts);
+		}
+	}
+}
