@@ -2,6 +2,8 @@
 	--button-background: #0069b4;
 	--button-color: var(--color-white);
 	--button-padding: 18px 113.5px;
+	--button-hover: #004e86;
+	--button-outline-hover: #004e86;
 	border-radius: 4px;
 	border: none;
 	background-color: var(--button-background);
@@ -9,9 +11,9 @@
 	padding: var(--button-padding);
 	font-size: var(--button-font-size);
 	line-height: var(--button-line-height);
-	font-weight: 600;
 	cursor: pointer;
-	font-style: normal;
+	font-weight: 600;
+	font-family: inherit;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -21,16 +23,28 @@
 	&--color-white {
 		--button-background: #0069b4;
 		--button-color: #0069b4;
+
+		&:hover {
+			--button-hover: var(--color-white);
+		}
 	}
 
 	&--color-gray {
-		--button-background: #F6F8FA;
+		--button-background: var(--color-light-gray);
 		--button-color: #33374E;
+
+		&:hover {
+			--button-hover: #e9e9e9;
+		}
 	}
 
 	&:disabled {
 		pointer-events: none;
 		opacity: 0.5;
+	}
+
+	&:hover:not(.v-button[disabled]) {
+		background-color: var(--button-hover);
 	}
 }
 
@@ -38,16 +52,12 @@
     --button-font-size: 18px;
     --button-padding: 14px 113.5px;
     --button-line-height: 26.1px;
-	--svg-width: 24px;
-    --svg-height: 24px;
 }
 
 .v-button[data-size=medium] {
     --button-font-size: 16px;
     --button-padding: 14.5px 85px;
     --button-line-height: 23.2px;
-	--svg-width: 24px;
-    --svg-height: 24px;
 }
 
 .v-button[data-size=quantity] {
@@ -58,20 +68,30 @@
     height: 32px;
 }
 
+// .v-button[data-size=quantity], v.v-button[data-appearance=fill] {
+// 	&:hover {
+// 		background-color: var(--button-hover);
+// 	}
+// }
+
 .v-button[data-appearance=outline] {
-	background-color: transparent;
+	background-color: var(--color-white);
     box-shadow: inset 0 0 0 1px var(--button-background);
     --button-color: var(--button-background);
+
+	&:hover:not(.v-button[data-appearance=outline]:disabled) {
+		background-color: var(--button-outline-hover);
+		--button-background: var(--button-outline-hover);
+		--button-color: var(--button-hover);
+	}
 }
 
 .v-button[data-appearance=text] {
     background-color: transparent;
     --button-color: var(--color-subtext);
-}
 
-.v-button {
-	svg {
-		width: var(--svg-width);
-		height: var(--svg-height);
+	&:hover:not(.v-button[data-appearance=text]:disabled) {
+		background-color: transparent;
+		--button-color: var(--button-hover);
 	}
 }

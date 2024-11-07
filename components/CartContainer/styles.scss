@@ -1,9 +1,13 @@
-.basket {
+.cart {
 	&-grid {
 		display: grid;
-		grid-template-columns: 1fr 425px;
-		grid-template-areas: "products aside";
-		gap: 55px
+		grid-template-columns: 1fr auto;
+		grid-template-areas: 
+						"header ."
+						"products aside"
+						"footer .";
+		-moz-column-gap: 55px;
+		column-gap: 55px;
 	}
 
 	&-header {
@@ -11,7 +15,7 @@
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 50px;
-		width: 960px;
+		grid-area: header;
 
 		&__title {
 			display: flex;
@@ -60,15 +64,18 @@
 	}
 
 	&-footer {
-		max-width: 960px;
-
+		grid-area: footer;
 
 		&__install {
 			display: flex;
 			gap: 20px;
 			padding: 28px 25px;
-			background-color: #F6F8FA;
+			background-color: var(--color-light-gray);
 			border-radius: 5px;
+
+			input {
+				width: 20px
+			}
 
 			&-text {
 				display: flex;

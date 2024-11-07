@@ -4,7 +4,7 @@
     justify-content: space-between;
     flex-direction: column;
 	padding: 25px;
-	background-color: #F6F8FA;
+	background-color: var(--color-light-gray);
 	height: 563px;
 
 	&__content {
@@ -50,6 +50,7 @@
 		flex-direction: column;
 
 		&-price {
+			font-family: 'Roboto', serif;
 			font-size: 22px;
 			font-weight: 500;
 			line-height: 28.6px;

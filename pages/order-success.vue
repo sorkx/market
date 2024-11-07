@@ -5,7 +5,9 @@
 				<IconsIconCheck />
 			</div>
 			
-			<h1 class="order-success__title">Заказ успешно оформлен!</h1>
+			<h1 class="order-success__title">
+				Заказ успешно оформлен!
+			</h1>
 			
 			<p class="order-success__message">
 				Спасибо за ваш заказ. Мы отправили подтверждение на вашу электронную почту.

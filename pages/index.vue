@@ -1,6 +1,6 @@
 <template>
-	<VBreadcrumbs />
-	<section>
-		<BasketContainer />
+	<section class="cart">
+		<VBreadcrumbs />
+		<CartPage />
 	</section>
 </template>

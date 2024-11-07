@@ -8,7 +8,7 @@ let swiper = null
 const breakpoints = reactive({
     320: {
         slidesPerView: slidesPerView.value,
-		spaceBetween: 57,
+		spaceBetween: 82,
 		slidesPerGroup: slidesPerView.value,
     }
 })

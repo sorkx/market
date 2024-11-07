@@ -23,20 +23,20 @@ const props = defineProps({
 			</div>
 			<div class="product-card__end">
 				<div class="product-card__end-item">
-					<span class="product-card__end-price">
+					<span class="product-card__end-price rub">
 						{{ item.price_to }} ₽ 
 					</span>
 					<div class="divider">–</div>
-					<span class="product-card__end-price">
+					<span class="product-card__end-price rub">
 						{{ item.price_from }} ₽ 
 					</span>
 				</div>
 				<div class="product-card__end-item">
-					<span class="product-card__end-price euro">
+					<span class="euro">
 						{{ item.euro_to }} € 
 					</span>
-					<div class="divider">–</div>
-					<span class="product-card__end-price euro">
+					<div class="divider euro">–</div>
+					<span class="euro">
 						{{ item.euro_from }} € 
 					</span>
 				</div>

@@ -9,6 +9,7 @@
 html {
 	font-size: 16px;
 	font-weight: normal;
+	font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -20,11 +21,7 @@ body {
 	width: 100%;
 	position: relative;
 }
-
-ul, li {
-	list-style-type: none;
-  }
   
-  a {
+a {
 	text-decoration: none;
-  }
+}

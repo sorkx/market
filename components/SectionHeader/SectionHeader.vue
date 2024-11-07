@@ -5,34 +5,27 @@ const cart = useCartStore()
 
 const { itemWord } = useItemWord(cart)
 
-const props = defineProps({
-	countProduct: {
-		type: [String, Number],
-		default: '',
-	},
-	sumPoducts: {
-		type: [String, Number],
-		default: '',
-	}
+const formattedSumPoducts = computed(() => {
+	return cart.totalAmout().toLocaleString('ru-RU')
 })
 </script>
 
 <template>
 	<header class="header container">
 		<div class="header__container">
-			<div class="basket">
+			<div class="cart">
 				<div class="bakset__left">
-					<IconsIconBasket />
+					<IconsIconCart />
 				</div>
-				<div class="basket__right">
-					<span class="basket__title">
+				<div class="cart__right">
+					<span class="cart__title">
 						Ваша корзина
 					</span>
-					<span class="basket__count">
+					<span class="cart__count">
 						{{ cart.totalItems() }} {{ itemWord }}
 					</span>
-					<span class="basket__sum">
-						{{ cart.totalAmout() }} ₽
+					<span class="cart__sum">
+						{{ formattedSumPoducts }} ₽
 					</span>
 				</div>
 			</div>

@@ -1,0 +1,3 @@
+<template>
+	<CartContainer />
+</template>

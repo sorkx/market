@@ -14,7 +14,7 @@
 			bottom: 0;
 			width: 100%;
 			height: 1px;
-			background: #c4c4c4;
+			background: var(--card-color-border);
 		}
 	}
 
@@ -44,7 +44,7 @@
 			font-size: 12px;
 			font-weight: 400;
 			line-height: 17.4px;
-			color: #2C3242;
+			color: var(--card-info-text);
 		}
 
 		&-article {
@@ -69,6 +69,7 @@
 			justify-content: center;
 
 			span {
+				font-family: 'Roboto', serif;
 				font-size: 12px;
 				font-weight: 400;
 				line-height: 17.4px;

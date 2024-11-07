@@ -8,7 +8,7 @@ const props = defineProps({
 		type: [String, Number],
 		default: '',
 	},
-	countProduct: {
+	countProducts: {
 		type: [String, Number],
 		default: '',
 	}
@@ -16,16 +16,15 @@ const props = defineProps({
 
 const isLoading = ref(false)
 
+const formattedSumPoducts = computed(() => {
+	return props.sumPoducts.toLocaleString('ru-RU')
+})
+
 const canSubmitOrder = computed(() => {
 	return cart.items.length > 0
 })
 
 const handleOrderSubmit = async () => {
-	if (!canSubmitOrder.value) {
-		alert('Корзина пуста')
-		return
-	}
-
 	try {
 		isLoading.value = true
 		await cart.submitOrder()
@@ -40,51 +39,51 @@ const handleOrderSubmit = async () => {
 </script>
 
 <template>
-	<div class="basket-total">
-		<div class="basket-total__content">
-			<div class="basket-total__title">
+	<div class="cart-total">
+		<div class="cart-total__content">
+			<div class="cart-total__title">
 				Итого
 			</div>
-			<div class="basket-total__data">
-				<div class="basket-total__data-item">
+			<div class="cart-total__data">
+				<div class="cart-total__data-item">
 					<span>
 						Сумма заказа
 					</span>
-					<span>
-						{{ sumPoducts }} ₽
+					<span class="total">
+						{{ formattedSumPoducts }} ₽
 					</span>
 				</div>
-				<div class="basket-total__data-item">
+				<div class="cart-total__data-item">
 					<span>
 						Количество
 					</span>
-					<span>
-						{{ countProduct }} шт
+					<span class="total">
+						{{ countProducts }} шт
 					</span>
 				</div>
-				<div class="basket-total__data-item">
+				<div class="cart-total__data-item">
 					<span>
 						Установка
 					</span>
-					<span>
+					<span class="total">
 						{{ cart.isInstallationNeeded ? 'Да' : 'Нет' }}
 					</span>
 				</div>
 			</div>
 
-			<div class="basket-total__divider" />
+			<div class="cart-total__divider" />
 
-			<div class="basket-total__total">
-				<div class="basket-total__total-sum">
-					<span class="basket-total__total-sum-title">
-						Сумма товаров
+			<div class="cart-total__total">
+				<div class="cart-total__total-sum">
+					<span class="cart-total__total-sum-title">
+						Стоимость товаров
 					</span>
-					<span class="basket-total__total-sum-value">
-						{{ sumPoducts }} ₽
+					<span class="cart-total__total-sum-value">
+						{{ formattedSumPoducts }} ₽
 					</span>
 				</div>
 			</div>
-			<div class="basket-total__buttons">
+			<div class="cart-total__buttons">
 				<VButton
 					modificator="color-main"
 					size="large"
@@ -98,6 +97,7 @@ const handleOrderSubmit = async () => {
 					modificator="color-white"
 					size="large"
 					appearance="outline"
+					:disabled="!canSubmitOrder"
 				>
 					Купить в 1 клик
 				</VButton>
