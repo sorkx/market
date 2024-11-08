@@ -24,7 +24,11 @@ const remove = (id) => {
 <template>
 	<div class="cart-product-card">
 		<div class="cart-product-card__image">
-			<img :src="item.img" />
+			<VImage 
+				:src="item.img"
+				loading="eager"
+				:alt="item.title" 
+			/>
 		</div>
 		<div class="cart-product-card__info">
 			<span>
@@ -32,10 +36,10 @@ const remove = (id) => {
 					{{ item.title }}
 				</h4>
 			</span>
-			<span class="cart-product-card__info-text">
-				{{ item.info }}
+			<span class="cart-product-card__subtitle">
+				{{ item.subtitle }}
 			</span>
-			<span class="cart-product-card__info-article">
+			<span class="cart-product-card__article">
 				{{ item.article }}
 			</span>
 		</div>
@@ -45,14 +49,14 @@ const remove = (id) => {
 				@increase="increaseQuantity(item)"
 				@decrease="decreaseQuantity(item)"
 			/>
-			<div class="cart-product-card__quantity-original-price">
+			<div class="cart-product-card__original-price">
 				<span v-if="item.quantity > 1">
 					{{ item.originalPrice }} ₽/шт. 
 				</span>
 			</div>
 		</div>
 		<div class="cart-product-card__end">
-			<span class="cart-product-card__end-price">
+			<span class="cart-product-card__price">
 				{{ item.price }} ₽
 			</span>
 		</div>

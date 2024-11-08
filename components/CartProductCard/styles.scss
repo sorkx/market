@@ -39,42 +39,42 @@
 			font-weight: 600;
 			line-height: 23.2px;
 		}
+	}
 
-		&-text {
-			font-size: 12px;
-			font-weight: 400;
-			line-height: 17.4px;
-			color: var(--card-info-text);
-		}
+	&__subtitle {
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 17.4px;
+		color: var(--card-info-text);
+	}
 
-		&-article {
-			font-size: 14px;
-			font-weight: 400;
-			line-height: 21px;
-			color: var(--color-subtext);
-		}
+	&__article {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 21px;
+		color: var(--color-subtext);
 	}
 
 	&__quantity {
 		position: relative;
 		grid-area: quantity;
+	}
 
-		&-original-price {
-			position: absolute;
-			left: 0;
-			right: 0;
-			margin-top: 8px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+	&__original-price {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin-top: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-			span {
-				font-family: 'Roboto', serif;
-				font-size: 12px;
-				font-weight: 400;
-				line-height: 17.4px;
-				color: var(--color-text);
-			}
+		span {
+			font-family: 'Roboto', serif;
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 17.4px;
+			color: var(--color-text);
 		}
 	}
 
@@ -83,13 +83,13 @@
 		flex-direction: column;
 		grid-area: end;
 		align-items: flex-end;
+	}
 
-		&-price {
-			font-size: 18px;
-			font-weight: 500;
-			line-height: 26.1px;
-			color: var(--color-text);
-		}
+	&__price {
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 26.1px;
+		color: var(--color-text);
 	}
 
 	&__action {

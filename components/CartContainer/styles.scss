@@ -76,26 +76,26 @@
 			input {
 				width: 20px
 			}
+		}
 
-			&-text {
-				display: flex;
-				flex-direction: column;
-				gap: 5px;
+		&__title {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
 
-				span {
-					&:first-child {
-						font-size: 16px;
-						font-weight: 600;
-						line-height: 23.2px;
-						color: var(--color-text);
-					}
+			span {
+				&:first-child {
+					font-size: 16px;
+					font-weight: 600;
+					line-height: 23.2px;
+					color: var(--color-text);
+				}
 
-					&:last-child {
-						font-size: 14px;
-						font-weight: 400;
-						line-height: 21px;
-						color: var(--color-subtext);
-					}
+				&:last-child {
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 21px;
+					color: var(--color-subtext);
 				}
 			}
 		}

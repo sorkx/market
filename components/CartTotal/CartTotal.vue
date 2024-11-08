@@ -36,6 +36,25 @@ const handleOrderSubmit = async () => {
 		isLoading.value = false
 	}
 }
+
+const checkInstall = computed(() => {
+	return cart.isInstallationNeeded ? 'Да' : 'Нет'
+})
+
+const totalItems = computed(() => [
+	{
+		label: 'Сумма заказа',
+		value: `${formattedSumPoducts.value} ₽`
+	},
+	{
+		label: 'Количество',
+		value: `${props.countProducts} шт`
+	},
+	{
+		label: 'Установка',
+		value: checkInstall.value
+	}
+])
 </script>
 
 <template>
@@ -45,28 +64,16 @@ const handleOrderSubmit = async () => {
 				Итого
 			</div>
 			<div class="cart-total__data">
-				<div class="cart-total__data-item">
-					<span>
-						Сумма заказа
+				<div
+					v-for="item in totalItems"
+					:key="item.label" 
+					class="cart-total__item"
+				>
+					<span class="cart-total__label">
+						{{ item.label }}
 					</span>
-					<span class="total">
-						{{ formattedSumPoducts }} ₽
-					</span>
-				</div>
-				<div class="cart-total__data-item">
-					<span>
-						Количество
-					</span>
-					<span class="total">
-						{{ countProducts }} шт
-					</span>
-				</div>
-				<div class="cart-total__data-item">
-					<span>
-						Установка
-					</span>
-					<span class="total">
-						{{ cart.isInstallationNeeded ? 'Да' : 'Нет' }}
+					<span class="cart-total__value">
+						{{ item.value }}
 					</span>
 				</div>
 			</div>
@@ -74,11 +81,11 @@ const handleOrderSubmit = async () => {
 			<div class="cart-total__divider" />
 
 			<div class="cart-total__total">
-				<div class="cart-total__total-sum">
-					<span class="cart-total__total-sum-title">
+				<div class="cart-total__sum">
+					<span class="cart-total__sum-title">
 						Стоимость товаров
 					</span>
-					<span class="cart-total__total-sum-value">
+					<span class="cart-total__sum-value">
 						{{ formattedSumPoducts }} ₽
 					</span>
 				</div>

@@ -71,8 +71,13 @@ const increaseQuantity = (item) => {
 						type="checkbox"
 						v-model="cart.isInstallationNeeded"
 					/>
-					<img src="/_nuxt/assets/images/install.png"/>
-					<div class="cart-footer__install-text">
+					<VImage 
+						src="/_nuxt/assets/images/install.png"
+						loading="eager"
+						alt="install"
+
+					/>
+					<div class="cart-footer__title">
 						<span>
 							Установка
 						</span>

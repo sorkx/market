@@ -14,7 +14,7 @@ const formattedSumPoducts = computed(() => {
 	<header class="header container">
 		<div class="header__container">
 			<div class="cart">
-				<div class="bakset__left">
+				<div class="cart__left">
 					<IconsIconCart />
 				</div>
 				<div class="cart__right">
