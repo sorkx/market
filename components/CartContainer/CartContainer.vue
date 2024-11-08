@@ -57,7 +57,7 @@ const items = computed(() =>
 					<VImage 
 						src="/_nuxt/assets/images/install.png"
 						loading="eager"
-						alt="install"
+						alt="Отвертка с гаечным ключом"
 
 					/>
 					<div class="cart-footer__title">
