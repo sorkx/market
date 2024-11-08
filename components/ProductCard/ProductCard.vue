@@ -11,37 +11,37 @@ const props = defineProps({
 	<div class="product-card">
 		<div class="product-card__image">
 			<VImage 
-				:src="item.img" 
-				:alt="item.subtitle"
+				:src="props.item.img" 
+				:alt="props.item.subtitle"
 				loading="lazy" 
 			/>
 		</div>
 		<div class="product-card__content">
 			<div class="product-card__info">
 				<h4>
-					{{ item.title }}
+					{{ props.item.title }}
 				</h4>
 				<span>
-					{{ item.subtitle }}
+					{{ props.item.subtitle }}
 				</span>
 			</div>
 			<div class="product-card__end">
 				<div class="product-card__item">
 					<span class="product-card__price rub">
-						{{ item.price_from }} ₽ 
+						{{ props.item.price_from }} ₽ 
 					</span>
 					<div class="divider">–</div>
 					<span class="product-card__price rub">
-						{{ item.price_to }} ₽ 
+						{{ props.item.price_to }} ₽ 
 					</span>
 				</div>
 				<div class="product-card__item">
 					<span class="euro">
-						{{ item.euro_from }} € 
+						{{ props.item.euro_from }} € 
 					</span>
 					<div class="divider euro">–</div>
 					<span class="euro">
-						{{ item.euro_to }} € 
+						{{ props.item.euro_to }} € 
 					</span>
 				</div>
 			</div>

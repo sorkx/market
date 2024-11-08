@@ -25,39 +25,39 @@ const remove = (id) => {
 	<div class="cart-product-card">
 		<div class="cart-product-card__image">
 			<VImage 
-				:src="item.img"
+				:src="props.item.img"
 				loading="eager"
-				:alt="item.title" 
+				:alt="props.item.title" 
 			/>
 		</div>
 		<div class="cart-product-card__info">
 			<span>
 				<h4>
-					{{ item.title }}
+					{{ props.item.title }}
 				</h4>
 			</span>
 			<span class="cart-product-card__subtitle">
-				{{ item.subtitle }}
+				{{ props.item.subtitle }}
 			</span>
 			<span class="cart-product-card__article">
-				{{ item.article }}
+				{{ props.item.article }}
 			</span>
 		</div>
 		<div class="cart-product-card__quantity">
 			<ProductQuantity
-				:quantity="item.quantity" 
-				@increase="increaseQuantity(item)"
-				@decrease="decreaseQuantity(item)"
+				:quantity="props.item.quantity" 
+				@increase="increaseQuantity(props.item)"
+				@decrease="decreaseQuantity(props.item)"
 			/>
 			<div class="cart-product-card__original-price">
-				<span v-if="item.quantity > 1">
-					{{ item.originalPrice }} ₽/шт. 
+				<span v-if="props.item.quantity > 1">
+					{{ props.item.originalPrice }} ₽/шт. 
 				</span>
 			</div>
 		</div>
 		<div class="cart-product-card__end">
 			<span class="cart-product-card__price">
-				{{ item.price }} ₽
+				{{ props.item.price }} ₽
 			</span>
 		</div>
 		<div class="cart-product-card__action">
@@ -65,7 +65,7 @@ const remove = (id) => {
 				data-appearance="text"
 				data-size="normal"
 				class="cross"
-				@click="remove(item.id)"
+				@click="remove(props.item.id)"
 			>
 				<IconsIconCross />
 			</VButton>
