@@ -42,13 +42,7 @@ const remove = (id) => {
 
 const item = computed(() => ({
 	id: props.id,
-	price: props.price,
-	img: props.img,
 	quantity: props.quantity,
-	title: props.title,
-	subtitle: props.subtitle,
-	article: props.article,
-	originalPrice: props.originalPrice,
 }))
 </script>
 
