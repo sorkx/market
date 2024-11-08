@@ -1,7 +1,7 @@
 <template>
 	<VButton
-		size="large"
-		appearance="fill"
+		data-size="large"
+		data-appearance="fill"
 		modificator="color-gray" 
 		class="swiper-button" 
 	>

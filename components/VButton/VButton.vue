@@ -4,14 +4,6 @@ const props = defineProps({
 		type: String,
 		default: '',
 	},
-	size: {
-		type: String,
-		default: '',
-	},
-	appearance: {
-		type: String,
-		default: '',
-	}
 })
 </script>
 
@@ -19,8 +11,7 @@ const props = defineProps({
 	<button 
 		class="v-button"
 		:class="`v-button--${props.modificator}`"
-		:data-size="props.size"
-		:data-appearance="props.appearance"
+		v-bind="$attrs"
 	>
 		<slot />
 	</button>

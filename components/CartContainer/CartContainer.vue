@@ -41,8 +41,8 @@ const increaseQuantity = (item) => {
 				</div>
 				<div class="cart-header__clear">
 					<VButton
-						appearance="text"
-						size="normal"
+						data-appearance="text"
+						data-size="normal"
 						@click="cart.clearCart()"
 						class="clear"
 					>

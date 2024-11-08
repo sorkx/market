@@ -93,8 +93,8 @@ const totalItems = computed(() => [
 			<div class="cart-total__buttons">
 				<VButton
 					modificator="color-main"
-					size="large"
-					appearance="fill"
+					data-size="large"
+					data-appearance="fill"
 					:disabled="isLoading || !canSubmitOrder"
 					 @click="handleOrderSubmit"
 				>
@@ -102,8 +102,8 @@ const totalItems = computed(() => [
 				</VButton>
 				<VButton
 					modificator="color-white"
-					size="large"
-					appearance="outline"
+					data-size="large"
+					data-appearance="outline"
 					:disabled="!canSubmitOrder"
 				>
 					Купить в 1 клик

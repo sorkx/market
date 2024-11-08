@@ -16,9 +16,5 @@ const props = defineProps({
 </script>
 
 <template>
-	<img 
-		:src="props.src"
-		:alt="props.alt"
-		:loading="props.loading"
-	/>
+	<img v-bind="$props" />
 </template>

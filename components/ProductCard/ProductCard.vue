@@ -47,8 +47,8 @@ const props = defineProps({
 			</div>
 		</div>
 		<VButton
-			size="medium"
-			appearance="fill"
+			data-size="medium"
+			data-appearance="fill"
 			class="product-card-button"
 		>
 			Подробнее

@@ -62,9 +62,9 @@ const remove = (id) => {
 		</div>
 		<div class="cart-product-card__action">
 			<VButton
-				appearance="text"
+				data-appearance="text"
+				data-size="normal"
 				class="cross"
-				size="normal"
 				@click="remove(item.id)"
 			>
 				<IconsIconCross />

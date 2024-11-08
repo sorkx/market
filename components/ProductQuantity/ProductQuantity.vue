@@ -22,8 +22,8 @@ const decrease = (item) => {
 	<div class="quantity">
 		<VButton
 			modificator="color-gray"
-			appearance="fill"
-			size="quantity"
+			data-appearance="fill"
+			data-size="quantity"
 			class="quantity__button minus"
 			@click="decrease()"
 		>
@@ -36,8 +36,8 @@ const decrease = (item) => {
 		</div>
 		<VButton
 			modificator="color-gray"
-			appearance="fill"
-			size="quantity"
+			data-appearance="fill"
+			data-size="quantity"
 			class="quantity__button plus"
 			@click="increase()"
 		>
