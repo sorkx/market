@@ -25,7 +25,7 @@ const formattedSumPoducts = computed(() => {
 			<template #slide="{ item }">
 					<ProductCard
 						:key="item.id" 
-						:item="item"
+						v-bind="item"
 					/>
 				</template>
 		</RouletteSlider>

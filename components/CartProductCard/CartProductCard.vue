@@ -1,19 +1,58 @@
 <script setup>
 const props = defineProps({
-	item: {
-		type: Object,
-		default: () => ({}),
+	img: {
+		type: String,
+		default: '',
 	},
+	quantity: {
+		type: [String, Number],
+		default: '',
+	},
+	title: {
+		type: String,
+		default: '',
+	},
+	subtitle: {
+		type: String,
+		default: '',
+	},
+	article: {
+		type: String,
+		default: '',
+	},
+	price: {
+		type: [String, Number],
+		default: '',
+	},
+	id: {
+		type: [String, Number],
+		default: '',
+	},
+	originalPrice: {
+		type: [String, Number],
+		default: '',
+	}
 })
 
 const emit = defineEmits(['remove', 'increase', 'decrease'])
 
-const increaseQuantity = (item) => {
-	emit('increase', item)
+const item = computed(() => ({
+	id: props.id,
+	price: props.price,
+	img: props.img,
+	quantity: props.quantity,
+	title: props.title,
+	subtitle: props.subtitle,
+	article: props.article,
+	originalPrice: props.originalPrice,
+}))
+
+const increaseQuantity = () => {
+	emit('increase', item.value)
 }
 
-const decreaseQuantity = (item) => {
-	emit('decrease', item)
+const decreaseQuantity = () => {
+	emit('decrease', item.value)
 }
 
 const remove = (id) => {
@@ -25,39 +64,39 @@ const remove = (id) => {
 	<div class="cart-product-card">
 		<div class="cart-product-card__image">
 			<VImage 
-				:src="props.item.img"
+				:src="props.img"
+				:alt="props.title" 
 				loading="eager"
-				:alt="props.item.title" 
 			/>
 		</div>
 		<div class="cart-product-card__info">
 			<span>
 				<h4>
-					{{ props.item.title }}
+					{{ props.title }}
 				</h4>
 			</span>
 			<span class="cart-product-card__subtitle">
-				{{ props.item.subtitle }}
+				{{ props.subtitle }}
 			</span>
 			<span class="cart-product-card__article">
-				{{ props.item.article }}
+				{{ props.article }}
 			</span>
 		</div>
 		<div class="cart-product-card__quantity">
 			<ProductQuantity
-				:quantity="props.item.quantity" 
-				@increase="increaseQuantity(props.item)"
-				@decrease="decreaseQuantity(props.item)"
+				:quantity="props.quantity" 
+				@increase="increaseQuantity()"
+				@decrease="decreaseQuantity()"
 			/>
 			<div class="cart-product-card__original-price">
-				<span v-if="props.item.quantity > 1">
-					{{ props.item.originalPrice }} ₽/шт. 
+				<span v-if="props.quantity > 1">
+					{{ props.originalPrice }} ₽/шт. 
 				</span>
 			</div>
 		</div>
 		<div class="cart-product-card__end">
 			<span class="cart-product-card__price">
-				{{ props.item.price }} ₽
+				{{ props.price }} ₽
 			</span>
 		</div>
 		<div class="cart-product-card__action">
@@ -65,7 +104,7 @@ const remove = (id) => {
 				data-appearance="text"
 				data-size="normal"
 				class="cross"
-				@click="remove(props.item.id)"
+				@click="remove(props.id)"
 			>
 				<IconsIconCross />
 			</VButton>

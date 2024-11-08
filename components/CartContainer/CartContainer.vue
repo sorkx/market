@@ -53,8 +53,8 @@ const increaseQuantity = (item) => {
 			<div class="cart-products">
 				<CartProductCard 
 					v-for="item in items"
-					:key="item.title"
-					:item="item"
+					:key="item.id"
+					v-bind="item"
 					@remove="cart.removeFromCart(item.id)"
 					@decrease="decreaseQuantity(item)"
 					@increase="increaseQuantity(item)"

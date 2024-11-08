@@ -1,9 +1,45 @@
 <script setup>
 const props = defineProps({
-	item: {
-		type: Object,
-		default: () => ({})
-	}
+	img: {
+		type: String,
+		default: '',
+	},
+	quantity: {
+		type: [String, Number],
+		default: '',
+	},
+	title: {
+		type: String,
+		default: '',
+	},
+	subtitle: {
+		type: String,
+		default: '',
+	},
+	article: {
+		type: String,
+		default: '',
+	},
+	price_from: {
+		type: [String, Number],
+		default: '',
+	},
+	price_to: {
+		type: [String, Number],
+		default: '',
+	},
+	euro_from: {
+		type: [String, Number],
+		default: '',
+	},
+	euro_to: {
+		type: [String, Number],
+		default: '',
+	},
+	id: {
+		type: [String, Number],
+		default: '',
+	},
 })
 </script>
 
@@ -11,37 +47,37 @@ const props = defineProps({
 	<div class="product-card">
 		<div class="product-card__image">
 			<VImage 
-				:src="props.item.img" 
-				:alt="props.item.subtitle"
+				:src="props.img" 
+				:alt="props.subtitle"
 				loading="lazy" 
 			/>
 		</div>
 		<div class="product-card__content">
 			<div class="product-card__info">
 				<h4>
-					{{ props.item.title }}
+					{{ props.title }}
 				</h4>
 				<span>
-					{{ props.item.subtitle }}
+					{{ props.subtitle }}
 				</span>
 			</div>
 			<div class="product-card__end">
 				<div class="product-card__item">
 					<span class="product-card__price rub">
-						{{ props.item.price_from }} ₽ 
+						{{ props.price_from }} ₽ 
 					</span>
 					<div class="divider">–</div>
 					<span class="product-card__price rub">
-						{{ props.item.price_to }} ₽ 
+						{{ props.price_to }} ₽ 
 					</span>
 				</div>
 				<div class="product-card__item">
 					<span class="euro">
-						{{ props.item.euro_from }} € 
+						{{ props.euro_from }} € 
 					</span>
 					<div class="divider euro">–</div>
 					<span class="euro">
-						{{ props.item.euro_to }} € 
+						{{ props.euro_to }} € 
 					</span>
 				</div>
 			</div>
