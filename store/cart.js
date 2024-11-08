@@ -83,6 +83,20 @@ export const useCartStore = defineStore('cart', () => {
 		items.value = []
 	}
 
+	const decreaseQuantity = (item) => {
+		if (item.quantity > 1) {
+			const newQuantity = item.quantity - 1
+			updateQuantity(item.id, newQuantity)
+		} else {
+			removeFromCart(item.id)
+		}
+	}
+	
+	const increaseQuantity = (item) => {
+		const newQuantity = item.quantity + 1
+		updateQuantity(item.id, newQuantity)
+	}
+
 	return {
 		items,
 		totalAmout,
@@ -93,5 +107,7 @@ export const useCartStore = defineStore('cart', () => {
 		clearCart,
 		toggleInstallation,
 		submitOrder,
+		increaseQuantity,
+		decreaseQuantity,
 	}
 })

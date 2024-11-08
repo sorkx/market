@@ -1,21 +1,18 @@
 <script setup>
+import { useCartStore } from '~/store/cart'
+
+const cart = useCartStore()
+
 const props = defineProps({
 	quantity: {
 		type: [String, Number],
 		default: '',
-	}
+	},
+	item: {
+		type: Object,
+		default: () => ({}),
+	},
 })
-
-const emit = defineEmits(['increase', 'decrease'])
-
-const increase = (item) => {
-	emit('increase', item)
-}
-
-const decrease = (item) => {
-	emit('decrease', item)
-}
-
 </script>
 
 <template>
@@ -25,7 +22,7 @@ const decrease = (item) => {
 			data-appearance="fill"
 			data-size="quantity"
 			class="quantity__button minus"
-			@click="decrease()"
+			@click="cart.decreaseQuantity(props.item)"
 		>
 			<IconsIconMinus />
 		</VButton>
@@ -39,7 +36,7 @@ const decrease = (item) => {
 			data-appearance="fill"
 			data-size="quantity"
 			class="quantity__button plus"
-			@click="increase()"
+			@click="cart.increaseQuantity(props.item)"
 		>
 			<IconsIconPlus />
 		</VButton>

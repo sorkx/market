@@ -34,7 +34,11 @@ const props = defineProps({
 	}
 })
 
-const emit = defineEmits(['remove', 'increase', 'decrease'])
+const emit = defineEmits(['remove'])
+
+const remove = (id) => {
+	emit('remove', id)
+}
 
 const item = computed(() => ({
 	id: props.id,
@@ -46,18 +50,6 @@ const item = computed(() => ({
 	article: props.article,
 	originalPrice: props.originalPrice,
 }))
-
-const increaseQuantity = () => {
-	emit('increase', item.value)
-}
-
-const decreaseQuantity = () => {
-	emit('decrease', item.value)
-}
-
-const remove = (id) => {
-	emit('remove', id)
-}
 </script>
 
 <template>
@@ -83,10 +75,9 @@ const remove = (id) => {
 			</span>
 		</div>
 		<div class="cart-product-card__quantity">
-			<ProductQuantity
-				:quantity="props.quantity" 
-				@increase="increaseQuantity()"
-				@decrease="decreaseQuantity()"
+			<ProductQuantity 
+				:quantity="props.quantity"
+				:item="item"
 			/>
 			<div class="cart-product-card__original-price">
 				<span v-if="props.quantity > 1">

@@ -12,21 +12,6 @@ const items = computed(() =>
 		price: (item.price * item.quantity).toLocaleString('ru-RU'),
 	}))
 )
-
-const decreaseQuantity = (item) => {
-	if (item.quantity > 1) {
-		const newQuantity = item.quantity - 1
-		cart.updateQuantity(item.id, newQuantity)
-	} else {
-		cart.removeFromCart(item.id)
-	}
-}
-
-const increaseQuantity = (item) => {
-	const newQuantity = item.quantity + 1
-	cart.updateQuantity(item.id, newQuantity)
-}
-
 </script>
 
 <template>
@@ -56,8 +41,6 @@ const increaseQuantity = (item) => {
 					:key="item.id"
 					v-bind="item"
 					@remove="cart.removeFromCart(item.id)"
-					@decrease="decreaseQuantity(item)"
-					@increase="increaseQuantity(item)"
 				/>
 			</div>
 			<CartTotal 
