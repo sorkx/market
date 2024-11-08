@@ -1,13 +1,13 @@
 @mixin font-face($fontFamily, $fileName, $fontWeight, $fontStyle: normal) {
 	@font-face {
-	  font-family: $fontFamily;
-	  src: url('/fonts/#{$fileName}.woff2') format('woff2'),
-	  url('/fonts/#{$fileName}.woff') format('woff');
-	  font-weight: $fontWeight;
-	  font-style: $fontStyle;
-	  font-display: optional;
+		font-family: $fontFamily;
+		src: url('/fonts/#{$fileName}.woff2') format('woff2'),
+		url('/fonts/#{$fileName}.woff') format('woff');
+		font-weight: $fontWeight;
+		font-style: $fontStyle;
+		font-display: optional;
 	}
-  }
+}
 
 @include font-face('Lato', 'Lato-Regular', 400);
 @include font-face('Lato', 'Lato-Medium', 500);

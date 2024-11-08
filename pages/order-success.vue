@@ -25,8 +25,8 @@
 	</div>
 </template>
 
-<style>
-	@import url("~/assets/styles/pages/order-success.scss");
+<style lang="scss">
+	@use "~/assets/styles/pages/order-success.scss";
 </style>
 
   
